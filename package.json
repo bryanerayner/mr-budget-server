@@ -1,0 +1,28 @@
+{
+  "name": "mr-budget-server",
+  "version": "0.0.1",
+  "description": "Server code for Mr. Budget",
+  "main": "lib/index.js",
+  "scripts": {
+    "prepublish": "tsc",
+    "pretest": "tsc --project tsconfig.test.json",
+    "test": "mocha test.js",
+    "posttest": "rimraf ./src/**/*.js",
+    "watch": "npm-watch",
+    "test-watch": "tsc --project tsconfig.test.json --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://bryanerayner@github.com/bryanerayner/mr-budget-server.git"
+  },
+  "author": "Bryanerayner",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bryanerayner/mr-budget-server/issues"
+  },
+  "homepage": "https://github.com/bryanerayner/mr-budget-server#readme",
+  "dependencies": {
+    "@types/node": "^6.0.46",
+    "hapi": "^15.2.0"
+  }
+}
