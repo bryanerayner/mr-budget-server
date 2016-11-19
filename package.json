@@ -7,6 +7,7 @@
     "prepublish": "tsc",
     "pretest": "tsc --project tsconfig.test.json",
     "test": "mocha test.js",
+    "start": "node lib/index.js",
     "posttest": "rimraf ./src/**/*.js",
     "watch": "npm-watch",
     "test-watch": "tsc --project tsconfig.test.json --watch"
