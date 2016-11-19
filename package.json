@@ -1,5 +1,5 @@
 {
-  "name": "mr-budget-server",
+  "name": "@bryanerayner/mr-budget-server",
   "version": "0.0.1",
   "description": "Server code for Mr. Budget",
   "main": "lib/index.js",
@@ -22,7 +22,10 @@
   },
   "homepage": "https://github.com/bryanerayner/mr-budget-server#readme",
   "dependencies": {
+    "@types/hapi": "^13.0.37",
     "@types/node": "^6.0.46",
-    "hapi": "^15.2.0"
+    "@types/stripe": "0.0.32",
+    "hapi": "^15.2.0",
+    "stripe": "^4.12.0"
   }
 }

@@ -3,7 +3,11 @@
     "compilerOptions": {
         "module": "commonjs",
         "declaration": true,
-        "outDir": "lib/"
+        "outDir": "lib/",
+        "types": [
+            "node",
+            "stripe"
+        ]
     },
     "files": [
         "./src/index.ts"
