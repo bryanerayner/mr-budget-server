@@ -1,6 +1,6 @@
 {
   "name": "@bryanerayner/mr-budget-server",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Server code for Mr. Budget",
   "main": "lib/index.js",
   "scripts": {
