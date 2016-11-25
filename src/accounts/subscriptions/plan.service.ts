@@ -4,7 +4,7 @@ import * as Promise from 'bluebird';
 
 
 
-export class PlanService {
+export default class PlanService {
 
     constructor(protected stripe: stripe.StripeStatic) {
 
