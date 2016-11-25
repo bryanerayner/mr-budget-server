@@ -1,12 +1,13 @@
 {
   "name": "@bryanerayner/mr-budget-server",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Server code for Mr. Budget",
   "main": "lib/index.js",
   "scripts": {
     "prepublish": "tsc",
     "pretest": "tsc --project tsconfig.test.json",
     "test": "mocha test.js",
+    "start": "node lib/index.js",
     "posttest": "rimraf ./src/**/*.js",
     "watch": "npm-watch",
     "test-watch": "tsc --project tsconfig.test.json --watch"
@@ -22,10 +23,23 @@
   },
   "homepage": "https://github.com/bryanerayner/mr-budget-server#readme",
   "dependencies": {
+    "@types/bluebird": "^3.0.35",
+    "@types/dotenv": "^2.0.19",
     "@types/hapi": "^13.0.37",
     "@types/node": "^6.0.46",
-    "@types/stripe": "0.0.32",
+    "bluebird": "^3.4.6",
+    "dotenv": "^2.0.0",
     "hapi": "^15.2.0",
     "stripe": "^4.12.0"
+  },
+  "devDependencies": {
+    "@types/chai": "^3.4.34",
+    "@types/mocha": "^2.2.33",
+    "@types/sinon": "^1.16.32",
+    "chai": "^3.5.0",
+    "mocha": "^3.1.2",
+    "nodemock": "^0.3.5",
+    "rimraf": "^2.5.4",
+    "sinon": "^1.17.6"
   }
 }

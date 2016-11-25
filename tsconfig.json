@@ -5,8 +5,7 @@
         "declaration": true,
         "outDir": "lib/",
         "types": [
-            "node",
-            "stripe"
+            "node"
         ]
     },
     "files": [

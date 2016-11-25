@@ -1,21 +1,17 @@
+import './env';
 import Hapi = require('hapi');
+import plansRoute from './accounts/subscriptions/plans.route';
 
 // Create a server with a host and port
 const server = new Hapi.Server();
 
 server.connection({
-    host: 'localhost',
+    host: process.env.HOST || 'localhost',
     port: process.env.PORT || 3000    
 });
 
-// Add the route
-server.route({
-    method: 'GET',
-    path: '/plans', 
-    handler: function (request, reply) {
-        return reply('hello world');
-    }
-});
+plansRoute.setup(server);
+
 
 // Start the server
 server.start((err) => {
