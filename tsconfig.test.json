@@ -4,7 +4,11 @@
         "module": "commonjs",
         "target":"es5",
         "declaration": true,
-        "outDir": "./"
+        "sourceMap": true,
+        "outDir": "./",
+        "lib":[
+            "es2015"
+        ]
     },
     "files": [
         "./test.ts",

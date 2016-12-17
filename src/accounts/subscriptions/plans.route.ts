@@ -1,6 +1,8 @@
 import Hapi = require('hapi');
 
-import PlanService from './plan.service';
+import { 
+    PlanService
+} from './plan.service';
 import stripeApi from './stripe.api';
 
 const plansRoute = {

@@ -1,9 +1,9 @@
 "use strict";
-require('mocha');
-var chai_1 = require('chai');
-var stripe_api_1 = require('./stripe.api');
+require("mocha");
+var chai_1 = require("chai");
+var stripe_api_1 = require("./stripe.api");
 var nodemock = require('nodemock');
-var plan_service_1 = require('./plan.service');
+var plan_service_1 = require("./plan.service");
 exports.PlanServiceTest = true;
 describe('PlanService', function () {
     describe('#getAllPlans', function () {
@@ -40,7 +40,8 @@ describe('PlanService', function () {
                 .takes({}, function () { })
                 .calls(1, [null, plansResponse]);
             stripeMock = {
-                plans: plansMock
+                plans: plansMock,
+                customers: null
             };
             service = new plan_service_1.PlanService(stripeMock);
         });
@@ -65,3 +66,4 @@ describe('PlanService Integration Test', function () {
         });
     });
 });
+//# sourceMappingURL=plan.service.spec.js.map

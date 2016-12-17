@@ -56,7 +56,8 @@ describe('PlanService', () => {
                 .calls(1, [null, plansResponse]);
 
             stripeMock = {
-                plans: plansMock
+                plans: plansMock,
+                customers: null
             };
 
             service = new PlanService(stripeMock);

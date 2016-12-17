@@ -1,7 +1,7 @@
 "use strict";
 ///<reference path="./stripe.d.ts" />
 ///<reference path="../../mr-budget.d.ts" />
-var Promise = require('bluebird');
+var Promise = require("bluebird");
 var PlanService = (function () {
     function PlanService(stripe) {
         this.stripe = stripe;
@@ -37,3 +37,4 @@ var PlanService = (function () {
     return PlanService;
 }());
 exports.PlanService = PlanService;
+//# sourceMappingURL=plan.service.js.map

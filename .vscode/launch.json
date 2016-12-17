@@ -28,10 +28,28 @@
             "cwd": "${workspaceRoot}",
             "runtimeExecutable": "npm",
             "runtimeArgs": [
-                "test", "debug"
+                "test",
+                "debug"
             ],
             "port": 5858
-
+        },
+        {
+            "name": "mocha",
+            "type": "node",
+            "request": "launch",
+            "program": "${workspaceRoot}/node_modules/mocha/bin/_mocha",
+            "stopOnEntry": false,
+            "args": [
+                "--no-timeouts",
+                "--colors",
+                "test.js"
+            ], //you can specify paths to specific tests here
+            "cwd": "${workspaceRoot}",
+            "sourceMaps": true,
+            "runtimeExecutable": null,
+            "env": {
+                "NODE_ENV": "testing"
+            }
         }
     ]
 }
