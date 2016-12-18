@@ -3,10 +3,10 @@ import Hapi = require('hapi');
 import { 
     PlanService
 } from './plan.service';
-import stripeApi from './stripe.api';
+
 
 const plansRoute = {
-    setup(server: Hapi.Server){
+    setup(server: Hapi.Server, stripeApi: stripe.StripeStatic){
 
         const service = new PlanService(stripeApi);
 

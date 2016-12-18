@@ -23,8 +23,8 @@ export declare class CustomerService {
      */
     getStripeCustomer(id: string): Promise<stripe.ICustomer>;
     /**
-     * Create a customer. This will create the customer via Stripe, and also modify the
-     * Firebase information.
+     * Create a customer. This will create the customer via Stripe, and also
+     * modify the Firebase information.
      * @param uid {string} The FireBase user uid to associate this customer object with
      */
     createCustomer(uid: string, email?: string): Promise<{

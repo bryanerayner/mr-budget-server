@@ -51,7 +51,8 @@ export class CustomerService {
      * Get the stripe customer
      */
     async getStripeCustomer(id: string) {
-        let customer = await new Promise<stripe.ICustomer>((resolve, reject) => {
+        let customer: stripe.ICustomer
+        customer = await new Promise<stripe.ICustomer>((resolve, reject) => {
             this.stripe.customers.retrieve(id, (err, customer) => {
                 if (err) {
                     reject(err);
@@ -63,11 +64,21 @@ export class CustomerService {
     }
 
     /**
-     * Create a customer. This will create the customer via Stripe, and also modify the 
-     * Firebase information.
+     * Create a customer. This will create the customer via Stripe, and also 
+     * modify the Firebase information.
      * @param uid {string} The FireBase user uid to associate this customer object with 
      */
     async createCustomer(uid: string, email: string = null) {
+
+        let existing = await this.getCustomer(uid);
+
+        if (existing) {
+            return {
+                customer: existing,
+                stripeCustomerId: existing.id
+            };
+        }
+        
         let {
             firebaseApp,
             stripe

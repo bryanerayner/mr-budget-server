@@ -101,17 +101,25 @@ var CustomerService = (function () {
         });
     };
     /**
-     * Create a customer. This will create the customer via Stripe, and also modify the
-     * Firebase information.
+     * Create a customer. This will create the customer via Stripe, and also
+     * modify the Firebase information.
      * @param uid {string} The FireBase user uid to associate this customer object with
      */
     CustomerService.prototype.createCustomer = function (uid, email) {
         if (email === void 0) { email = null; }
         return __awaiter(this, void 0, void 0, function () {
-            var _a, firebaseApp, stripe, customer, database, stripeCustomerId;
+            var existing, _a, firebaseApp, stripe, customer, database, stripeCustomerId;
             return __generator(this, function (_b) {
                 switch (_b.label) {
-                    case 0:
+                    case 0: return [4 /*yield*/, this.getCustomer(uid)];
+                    case 1:
+                        existing = _b.sent();
+                        if (existing) {
+                            return [2 /*return*/, {
+                                    customer: existing,
+                                    stripeCustomerId: existing.id
+                                }];
+                        }
                         _a = this, firebaseApp = _a.firebaseApp, stripe = _a.stripe;
                         return [4 /*yield*/, new Promise(function (resolve, reject) {
                                 stripe.customers.create({
@@ -128,7 +136,7 @@ var CustomerService = (function () {
                                 });
                                 var _a;
                             })];
-                    case 1:
+                    case 2:
                         customer = _b.sent();
                         database = firebaseApp.database();
                         stripeCustomerId = customer.id;
@@ -136,7 +144,7 @@ var CustomerService = (function () {
                                 database.ref("users/" + uid + "/stripeCustomerId").set(stripeCustomerId),
                                 database.ref("users/" + uid + "/stripeCustomer").set(customer)
                             ])];
-                    case 2:
+                    case 3:
                         _b.sent();
                         return [2 /*return*/, {
                                 customer: customer,

@@ -1,2 +1,3 @@
 import * as accounts from './accounts/test';
-export { accounts };
+import * as firebase from './firebase/test';
+export { accounts, firebase };
